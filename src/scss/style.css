@@ -1,0 +1,50 @@
+.card {
+  border: solid 2px #432505;
+  background-color: #ffffc2;
+  border-radius: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
+  font-size: 3rem;
+}
+
+.male {
+  color: #02A3FF;
+  font-style: bold;
+  font-size: 2rem;
+}
+
+.female {
+  font-style: bold;
+  font-size: 2rem;
+  color: #EC49A7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #724711;
+  margin: 0;
+  color: white;
+}
+body > header {
+  background-color: #432505;
+  padding: 1em;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}/*# sourceMappingURL=style.css.map */

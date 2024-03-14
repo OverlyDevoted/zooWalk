@@ -1,0 +1,21 @@
+@use "./../variables/colors";
+.card {
+    border: solid 2px colors.$gorse-950;
+    background-color: colors.$gorse-100;
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 2rem;
+    font-size: 3rem;
+}
+
+.male {
+    color: colors.$male;
+    font-style: bold;
+    font-size: 2rem;
+}
+
+.female {
+    font-style: bold;
+    font-size: 2rem;
+    color: colors.$female;
+}
