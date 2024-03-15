@@ -1,4 +1,4 @@
-import { Food } from "../../../types/food.type";
+import { Food } from "../../Food/Food";
 import Animal from "../../Animal/Animal";
 import Employee from "../Employee";
 

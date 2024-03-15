@@ -1,11 +1,20 @@
 .card {
   border: solid 2px #432505;
   background-color: #ffffc2;
+  color: #724711;
   border-radius: 1rem;
   width: -moz-fit-content;
   width: fit-content;
   padding: 2rem;
+  width: 200px;
+}
+.card .icon {
   font-size: 3rem;
+}
+.card > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .male {
@@ -47,4 +56,8 @@ body > header {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+ul {
+  list-style: none;
 }/*# sourceMappingURL=style.css.map */

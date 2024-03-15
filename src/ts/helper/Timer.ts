@@ -16,7 +16,6 @@ class Timer extends GameObject {
     if (this.currentTime < this.duration) {
       this.currentTime += deltaT;
     } else {
-      console.log("finished");
       this.observer.call("finish", null);
       this.currentTime = 0;
     }

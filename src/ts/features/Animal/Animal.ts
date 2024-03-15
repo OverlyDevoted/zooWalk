@@ -1,4 +1,4 @@
-import { Food } from "../../types/food.type";
+import { Food } from "../Food/Food";
 import GameObject from "../Game/GameObject";
 import { Animals, AnimalInfo, AnimalOrigins, Gender } from "./animal.type";
 abstract class Animal extends GameObject {
@@ -46,5 +46,6 @@ export interface Terrestrial {
   jump(): void;
   run(): void;
 }
+
 
 export default Animal;
