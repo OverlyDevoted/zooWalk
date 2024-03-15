@@ -1,0 +1,23 @@
+@use "./../variables/colors";
+.zoo-info {
+    position: absolute; 
+    right: 300px;
+    bottom: 0;
+    transform: translateY(100%);
+    background-color: #cc9b02a1;
+
+    & > ul {
+        display: flex;
+        & .tooltip {
+            display: none;
+        }
+        & > li:hover {
+            position: relative;
+            background-color: #cc9b02c1;
+            & .tooltip {
+                display: block;
+                position:absolute
+            }
+        }
+    }
+}

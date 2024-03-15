@@ -12,24 +12,50 @@
     <h1>
       ZooWalk
     </h1>
+    <div id=stats class="zoo-info">
+      <ul>
+        <li>
+          <span>✨</span>
+          <span id="appeal-value"></span>
+          <span class="tooltip">Appeal</span>
+        </li>
+        <li>
+          <span>💲</span>
+          <span id="money-value"></span>
+          <span class="tooltip">Money</span>
+        </li>
+        <li>
+          <span>👩‍🏭</span>
+          <span id="worker-value"></span>
+          <span class="tooltip">Zookeepers</span>
+        </li>
+        <li>
+          <span>🐾</span>
+          <span id="animal-value"></span>
+          <span class="tooltip">Animals</span>
+        </li>
+      </ul>
+    </div>
   </header>
-  <aside>
-
+  <aside id="shop-wrapper" class="aside">
     <h2>Shop</h2>
     <ul>
       <li>
         <h3>Animals</h3>
-        <article id="animal-shop" class="grid"></article>
+        <article id="animal-shop" class="flex-column"></article>
       </li>
       <li>
         <h3>Employees</h3>
-        <article id="employee-shop" class="grid"></article>
+        <article id="employee-shop" class="flex-column"></article>
       </li>
       <li>
         <h3>Food</h3>
-        <article id="food-shop" class="grid"></article>
+        <article id="food-shop" class="flex-column"></article>
       </li>
     </ul>
+    <button id="shop-expand-btn" class="btn expand-btn">
+      <span id="arrow-btn">↪</span>
+    </button>
   </aside>
   <main>
   </main>

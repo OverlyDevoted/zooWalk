@@ -1,12 +1,23 @@
 @use "./../variables/colors";
 @use "./../components/cards";
 @use "./../components/grid";
+@use "./../components/flex";
+@use "./../components/buttons";
+@use "./../components/aside";
+@use "./../components/info-menu";
+@use "./../components/modal";
+
+//layout elements
+@use "./header";
+
 *, *::after, *::before {
     box-sizing: border-box;
 }
 :root {
     font-size: 20px;
     font-family: sans-serif;
+    
+    overscroll-behavior: none;
 }
 
 body {
@@ -18,12 +29,16 @@ body {
         padding: 1em;
         text-align: center;
     }
+    grid-template-columns: auto 1fr;
+    overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 
-ul {
+ul, li {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }

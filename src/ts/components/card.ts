@@ -16,7 +16,14 @@ export const generateAnimalCard = (animal: Animal): HTMLElement => {
   if (gender == Gender.FEMALE) genderEl.classList.add("female");
   else genderEl.classList.add("male");
 
-  info.append(getIcon(icon), genderEl, getPrice(getRandomPrice()));
+  info.append(
+    getIconElement(icon),
+    genderEl,
+    getPriceElement(getRandomPrice()),
+    getBuyElement(() => {
+      console.log(animal);
+    })
+  );
   wrapper.append(info);
   wrapper.classList.add("card");
   return wrapper;
@@ -29,7 +36,13 @@ export const generateFoodCard = (food: Food): HTMLElement => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { icon, name, price, calories } = food;
 
-  info.append(getIcon(icon), getPrice(price));
+  info.append(
+    getIconElement(icon),
+    getPriceElement(price),
+    getBuyElement(() => {
+      console.log(food);
+    })
+  );
   wrapper.append(info);
   wrapper.classList.add("card");
   return wrapper;
@@ -45,19 +58,33 @@ export const generateEmployeeCard = (employee: Employee): HTMLElement => {
   const nameEl = document.createElement("span");
   nameEl.textContent = name;
 
-  info.append(getIcon(icon), nameEl, getPrice(getRandomPrice()));
+  info.append(
+    getIconElement(icon),
+    nameEl,
+    getPriceElement(getRandomPrice()),
+    getBuyElement(() => {
+      console.log(employee);
+    })
+  );
   wrapper.append(info);
   wrapper.classList.add("card");
   return wrapper;
 };
-const getIcon = (icon: string): HTMLElement => {
+const getIconElement = (icon: string): HTMLElement => {
   const iconEl = document.createElement("span");
   iconEl.textContent = icon;
   iconEl.classList.add("icon");
   return iconEl;
 };
-const getPrice = (price: number): HTMLElement => {
+const getPriceElement = (price: number): HTMLElement => {
   const priceEl = document.createElement("span");
   priceEl.textContent = `${price} 💰`;
   return priceEl;
+};
+const getBuyElement = (fn: (e?: Event) => void) => {
+  const buyEl = document.createElement("button");
+  buyEl.textContent = "BUY";
+  buyEl.setAttribute("class", "btn buy-btn");
+  buyEl.addEventListener("click", fn);
+  return buyEl;
 };

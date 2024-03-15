@@ -7,3 +7,9 @@ This project was created for practicing design patters. In this project you can 
 - Singletons
 - Observers
 - Abstract factories
+
+## TODO
+
+- [ ] Display game information
+    - Money
+    - Day time remainder

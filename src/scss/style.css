@@ -2,18 +2,21 @@
   border: solid 2px #432505;
   background-color: #ffffc2;
   color: #724711;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 2rem;
+  padding: 0.5rem;
   width: 200px;
+  font-size: 0.75rem;
 }
 .card .icon {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .card > div {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   text-align: center;
 }
 
@@ -34,6 +37,115 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
+.flex-column {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.btn {
+  background-color: #fffb89;
+  border: solid 2px #724711;
+  font-size: 1rem;
+  padding: 0.3em 0.5em;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+.buy-btn {
+  background-color: #13a10e;
+  color: white;
+}
+.buy-btn:hover {
+  background-color: #0e720b;
+}
+
+.expand-btn {
+  color: white;
+  position: absolute;
+  background-color: #a36f05;
+  right: 0;
+  transform: translate(50%);
+  top: 50%;
+  border-radius: 100%;
+  border: solid 2px white;
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+.expand-btn > * {
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+.expand-btn.rotate {
+  transform: translate(100%);
+}
+.expand-btn.rotate > * {
+  display: inline-block;
+  transform: rotate(180deg);
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.aside {
+  background-color: #432505;
+  display: inline-block;
+  padding: 0.5em 2em 0.5em 1em;
+  border-top: solid 2px #fffb89;
+  position: relative;
+  transition-duration: 300ms;
+  transition-property: transform;
+  transition-delay: 150ms;
+  text-align: center;
+  position: sticky;
+}
+.aside.hide {
+  transform: translate(-100%);
+}
+
+.zoo-info {
+  position: absolute;
+  right: 300px;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: rgba(204, 155, 2, 0.631372549);
+}
+.zoo-info > ul {
+  display: flex;
+}
+.zoo-info > ul .tooltip {
+  display: none;
+}
+.zoo-info > ul > li:hover {
+  position: relative;
+  background-color: rgba(204, 155, 2, 0.7568627451);
+}
+.zoo-info > ul > li:hover .tooltip {
+  display: block;
+  position: absolute;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: green;
+}
+
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+  top: 0;
+  left: 0;
+}
+
+header {
+  position: relative;
+}
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -41,12 +153,15 @@
 :root {
   font-size: 20px;
   font-family: sans-serif;
+  overscroll-behavior: none;
 }
 
 body {
   background-color: #724711;
   margin: 0;
   color: white;
+  grid-template-columns: auto 1fr;
+  overflow-x: hidden;
 }
 body > header {
   background-color: #432505;
@@ -58,6 +173,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-ul {
+ul, li {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

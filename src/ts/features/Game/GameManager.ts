@@ -2,11 +2,12 @@ import GameObject from "./GameObject";
 import { Callback } from "../../types/helpers.type";
 import Timer from "../../helper/Timer";
 class GameManager extends GameObject {
-  dayDuration: number = 1 * 60;
+  dayDuration: number;
   dayTimer: Timer;
   newDayFn: Callback[] = [];
-  constructor() {
+  constructor(dayInMinutes: number) {
     super();
+    this.dayDuration = dayInMinutes * 60;
     this.dayTimer = new Timer(this.dayDuration);
   }
   override start(): void {}
@@ -15,6 +16,10 @@ class GameManager extends GameObject {
   }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   override update(deltaT: number): void {}
+  startDay() {
+    console.log("start day")
+    this.dayTimer.start();
+  }
 }
 
 export default GameManager;

@@ -1,0 +1,43 @@
+@use "./../variables/colors";
+.btn {
+  background-color: colors.$gorse-200;
+  border: solid 2px colors.$gorse-900;
+  font-size: 1rem;
+  padding: 0.3em 0.5em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.buy-btn {
+  background-color: #13a10e;
+  color: white;
+  &:hover {
+    background-color: #0e720b;
+  }
+}
+.expand-btn {
+  color: white;
+  position: absolute;
+
+  background-color: colors.$gorse-700;
+  right: 0;
+  transform: translate(50%);
+  top: 50%;
+  border-radius: 100%;
+  border: solid 2px white;
+  transition-property: transform;
+  transition-duration: 300ms;
+  & > * {
+      transition-property: transform;
+      transition-duration: 300ms;
+  }
+  &.rotate {
+    transform: translate(100%);
+    > * {
+      display: inline-block;
+      transform: rotate(180deg);
+      height: fit-content;
+    }
+  }
+}
