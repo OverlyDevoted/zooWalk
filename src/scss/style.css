@@ -112,6 +112,7 @@
 }
 .zoo-info > ul {
   display: flex;
+  gap: 1em;
 }
 .zoo-info > ul .tooltip {
   display: none;

@@ -1,7 +1,9 @@
-export const showGameStartModal = () => {
-    const modal = document.createElement("div") as HTMLElement;
-    modal.classList.add("modal");
-    modal.innerHTML = `
+import GameManager from "../features/Game/GameManager";
+
+export function showGameStartModal(gameManager: GameManager) {
+  const modal = document.createElement("div") as HTMLElement;
+  modal.classList.add("modal");
+  modal.innerHTML = `
     
     <h2>ZooWalk - Zoo park management game</h2>
     <p>The main goal of this game is to develop a successful zoo park . You do that by acquiring new animals for the zoo, hiring employees to take care of the animals and the zoo itself. By making your park more appealing you will atract more customers, thus earning you more money 🤑🤑🤑!</p>
@@ -10,14 +12,17 @@ export const showGameStartModal = () => {
     <input type="text" placeholder="Zoo name" required>
     <button>Start</button>
     </form>
-    `
-    const modalBackground = document.createElement("div") as HTMLElement;
-    modalBackground.classList.add("background");
-    document.body.append(modalBackground, modal);
-    const gameStartForm = document.getElementById("game-start-form") as HTMLFormElement;
-    gameStartForm.addEventListener("submit", (e:SubmitEvent)=>{
-        e.preventDefault();
-        modal.remove();
-        modalBackground.remove();
-    }) 
-};
+    `;
+  const modalBackground = document.createElement("div") as HTMLElement;
+  modalBackground.classList.add("background");
+  document.body.append(modalBackground, modal);
+  const gameStartForm = document.getElementById(
+    "game-start-form"
+  ) as HTMLFormElement;
+  gameStartForm.addEventListener("submit", (e: SubmitEvent) => {
+    e.preventDefault();
+    modal.remove();
+    modalBackground.remove();
+    gameManager.startDay();
+  });
+}
